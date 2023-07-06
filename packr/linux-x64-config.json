@@ -1,0 +1,20 @@
+{
+    "platform": "linux64",
+    "jdk": "linux-jdk",
+    "executable": "Cyphorax",
+    "classpath": [
+        "target/Cyphorax.jar"
+    ],
+    "mainclass": "net.runelite.launcher.Launcher",
+    "vmargs": [
+       "-Drunelite.launcher.nojvm=true",
+       "-Xmx512m",
+       "-Xss2m",
+       "-XX:CompileThreshold=1500"
+    ],
+    "output": "native-linux-x86_64/Cyphorax.AppDir/",
+    "resources": [
+      "target/filtered-resources/app.desktop",
+      "appimage/app.png"
+    ]
+}
