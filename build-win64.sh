@@ -2,26 +2,23 @@
 
 set -e
 
-JDK_VER="11.0.16.1"
-JDK_BUILD="1"
-JDK_BUILD_SHORT="1"
-JDK_HASH="85ca20dae21fb5949045df02cc47e71495a1903f77a97a93085596e5e96d0714"
-PACKR_VERSION="runelite-1.8"
-PACKR_HASH="ea9e8a9b276cc7548f85cf587c7bd3519104aa9b877f3d7b566fb8492d126744"
+PACKR_VERSION="runelite-1.7"
+PACKR_HASH="f61c7faeaa364b6fa91eb606ce10bd0e80f9adbce630d2bae719aef78d45da61"
 
-if ! [ -f OpenJDK11U-jre_x64_windows_hotspot_${JDK_VER}_${JDK_BUILD}.zip ] ; then
-    curl -Lo OpenJDK11U-jre_x64_windows_hotspot_${JDK_VER}_${JDK_BUILD}.zip \
-        https://github.com/adoptium/temurin11-binaries/releases/download/jdk-${JDK_VER}%2B${JDK_BUILD}/OpenJDK11U-jre_x64_windows_hotspot_${JDK_VER}_${JDK_BUILD_SHORT}.zip
+source .jdk-versions.sh
+
+if ! [ -f win64_jre.zip ] ; then
+    curl -Lo win64_jre.zip $WIN64_LINK
 fi
 
-echo "${JDK_HASH} OpenJDK11U-jre_x64_windows_hotspot_${JDK_VER}_${JDK_BUILD}.zip" | sha256sum -c
+echo "$WIN64_CHKSUM win64_jre.zip" | sha256sum -c
 
 # packr requires a "jdk" and pulls the jre from it - so we have to place it inside
 # the jdk folder at jre/
 if ! [ -d win64-jdk ] ; then
-    unzip OpenJDK11U-jre_x64_windows_hotspot_${JDK_VER}_${JDK_BUILD}.zip
+    unzip win64_jre.zip
     mkdir win64-jdk
-    mv jdk-$JDK_VER+$JDK_BUILD_SHORT-jre win64-jdk/jre
+    mv jdk-$WIN64_VERSION-jre win64-jdk/jre
 fi
 
 if ! [ -f packr_${PACKR_VERSION}.jar ] ; then
@@ -37,6 +34,9 @@ java -jar packr_${PACKR_VERSION}.jar \
 tools/rcedit-x64 native-win64/Cyphorax.exe \
   --application-manifest packr/app.manifest \
   --set-icon app.ico
+
+echo Cyphorax.exe 64bit sha256sum
+sha256sum native-win64/Cyphorax.exe
 
 # We use the filtered iss file
 iscc target/filtered-resources/app.iss
