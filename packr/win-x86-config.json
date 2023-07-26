@@ -1,9 +1,9 @@
 {
   "platform": "windows32",
   "jdk": "win32-jdk",
-  "executable": "Cyphorax",
+  "executable": "OSAlive",
   "classpath": [
-    "target/Cyphorax.jar"
+    "target/OSAlive.jar"
   ],
   "mainclass": "net.runelite.launcher.Launcher",
   "vmargs": [

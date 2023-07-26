@@ -35,20 +35,20 @@ echo "ea9e8a9b276cc7548f85cf587c7bd3519104aa9b877f3d7b566fb8492d126744  packr_${
 # Note: Host umask may have checked out this directory with g/o permissions blank
 chmod -R u=rwX,go=rX appimage
 # ...ditto for the build process
-chmod 644 target/Cyphorax.jar
+chmod 644 target/OSAlive.jar
 
 java -jar packr_${PACKR_VERSION}.jar \
     packr/linux-x64-config.json
 
-pushd native-linux-x86_64/Cyphorax.AppDir
+pushd native-linux-x86_64/OSAlive.AppDir
 mkdir -p jre/lib/amd64/server/
 ln -s ../../server/libjvm.so jre/lib/amd64/server/ # packr looks for libjvm at this hardcoded path
 
 # Symlink AppRun -> RuneLite
-ln -s Cyphorax AppRun
+ln -s OSAlive AppRun
 
 # Ensure RuneLite is executable to all users
-chmod 755 Cyphorax
+chmod 755 OSAlive
 popd
 
 if ! [ -f appimagetool-x86_64.AppImage ] ; then
@@ -60,5 +60,5 @@ fi
 echo "df3baf5ca5facbecfc2f3fa6713c29ab9cefa8fd8c1eac5d283b79cab33e4acb  appimagetool-x86_64.AppImage" | sha256sum -c
 
 ./appimagetool-x86_64.AppImage \
-	native-linux-x86_64/Cyphorax.AppDir/ \
-	native-linux-x86_64/Cyphorax.AppImage
+	native-linux-x86_64/OSAlive.AppDir/ \
+	native-linux-x86_64/OSAlive.AppImage
