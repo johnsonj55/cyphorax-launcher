@@ -30,8 +30,8 @@
 	<groupId>net.runelite</groupId>
 	<artifactId>launcher</artifactId>
 	<version>1.0</version>
-	<name>Cyphorax Launcher</name>
-	<description>Launcher for Cyphorax client</description>
+	<name>OSAlive Launcher</name>
+	<description>Launcher for OSAlive client</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -152,7 +152,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>Cyphorax</finalName>
+		<finalName>OSAlive</finalName>
 
 		<resources>
 			<resource>

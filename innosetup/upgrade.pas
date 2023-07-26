@@ -14,7 +14,7 @@ begin
 
     rlUpgrade := GetEnv('ELVARG_UPGRADE');
     if rlUpgrade <> '' then begin
-      exePath := ExpandConstant('{app}\Cyphorax.exe');
+      exePath := ExpandConstant('{app}\OSAlive.exe');
       Exec(exePath, GetEnv('ELVARG_UPGRADE_PARAMS'), '', SW_SHOW, ewNoWait, ResultCode);
     end;
   end;
