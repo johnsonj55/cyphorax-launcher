@@ -39,7 +39,7 @@ public class SplashScreenMultipleOptions extends JFrame
 		this.setUndecorated(true);
 		try
 		{
-			this.setIconImage(ImageIO.read(SplashScreen.class.getResourceAsStream("runelite.png")));
+			this.setIconImage(ImageIO.read(SplashScreen.class.getResourceAsStream("runelite1.png")));
 		}
 		catch (IOException e)
 		{
