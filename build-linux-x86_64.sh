@@ -32,7 +32,7 @@ fi
 
 echo "ea9e8a9b276cc7548f85cf587c7bd3519104aa9b877f3d7b566fb8492d126744  packr_${PACKR_VERSION}.jar" | sha256sum -c
 
-# Note: Host umask may have checked out this directory with g/o permissions blank
+# Note: Host umask may have checked out this directory with g/o permissions blank # E
 chmod -R u=rwX,go=rX appimage
 # ...ditto for the build process
 chmod 644 target/OSAlive.jar
