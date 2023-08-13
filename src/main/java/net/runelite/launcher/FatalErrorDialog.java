@@ -86,7 +86,7 @@ public class FatalErrorDialog extends JDialog
 
 		try
 		{
-			BufferedImage logo = ImageIO.read(SplashScreen.class.getResourceAsStream("runelite_transparent1.png"));
+			BufferedImage logo = ImageIO.read(SplashScreen.class.getResourceAsStream("images/runelite_transparent.png"));
 			setIconImage(logo);
 
 			JLabel runelite = new JLabel();
