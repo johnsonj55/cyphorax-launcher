@@ -2,9 +2,9 @@
   "platform": "mac64",
   "icon": "packr/app.icns",
   "jdk": "osx-jdk",
-  "executable": "X",
+  "executable": "Cyphorax",
   "classpath": [
-    "target/X.jar"
+    "target/Cyphorax.jar"
   ],
   "mainclass": "net.runelite.launcher.Launcher",
   "vmargs": [
@@ -12,5 +12,5 @@
     "-Xss2m",
     "-XX:CompileThreshold=1500"
   ],
-  "output": "native-osx/X.app"
+  "output": "native-osx/Cyphorax.app"
 }

@@ -54,7 +54,7 @@ class InfoPanel extends JPanel
 		c.ipady = 5;
 		try
 		{
-			TRANSPARENT_LOGO = ImageIO.read(SplashScreen.class.getResourceAsStream("images/runelite_transparent.png"));
+			TRANSPARENT_LOGO = ImageIO.read(SplashScreen.class.getResourceAsStream("runelite_transparent.png"));
 		}
 		catch (IOException e)
 		{

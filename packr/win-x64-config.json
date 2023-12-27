@@ -1,9 +1,9 @@
 {
   "platform": "windows64",
   "jdk": "win64-jdk",
-  "executable": "X",
+  "executable": "Cyphorax",
   "classpath": [
-    "target/X.jar"
+    "target/Cyphorax.jar"
   ],
   "mainclass": "net.runelite.launcher.Launcher",
   "vmargs": [

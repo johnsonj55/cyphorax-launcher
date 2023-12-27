@@ -40,21 +40,21 @@ echo "${PACKR_HASH}  packr_${PACKR_VERSION}.jar" | shasum -c
 java -jar packr_${PACKR_VERSION}.jar \
 	packr/macos-aarch64-config.json
 
-cp target/filtered-resources/Info.plist native-osx-aarch64/X.app/Contents
+cp target/filtered-resources/Info.plist native-osx-aarch64/Cyphorax.app/Contents
 
-echo Setting world execute permissions on X
-pushd native-osx-aarch64/X.app
-chmod g+x,o+x Contents/MacOS/X
+echo Setting world execute permissions on Cyphorax
+pushd native-osx-aarch64/Cyphorax.app
+chmod g+x,o+x Contents/MacOS/Cyphorax
 popd
 
-codesign -f -s "${SIGNING_IDENTITY}" --entitlements osx/signing.entitlements --options runtime native-osx-aarch64/X.app || true
+codesign -f -s "${SIGNING_IDENTITY}" --entitlements osx/signing.entitlements --options runtime native-osx-aarch64/Cyphorax.app || true
 
 # create-dmg exits with an error code due to no code signing, but is still okay
-create-dmg native-osx-aarch64/X.app native-osx-aarch64/ || true
+create-dmg native-osx-aarch64/Cyphorax.app native-osx-aarch64/ || true
 
-mv native-osx-aarch64/X\ *.dmg native-osx-aarch64/X-aarch64.dmg
+mv native-osx-aarch64/Cyphorax\ *.dmg native-osx-aarch64/Cyphorax-aarch64.dmg
 
 # Notarize app
-if xcrun notarytool submit native-osx-aarch64/X-aarch64.dmg --wait --keychain-profile "AC_PASSWORD" ; then
-    xcrun stapler staple native-osx-aarch64/X-aarch64.dmg
+if xcrun notarytool submit native-osx-aarch64/Cyphorax-aarch64.dmg --wait --keychain-profile "AC_PASSWORD" ; then
+    xcrun stapler staple native-osx-aarch64/Cyphorax-aarch64.dmg
 fi

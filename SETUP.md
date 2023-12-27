@@ -105,7 +105,7 @@ runelite.download.link=https://**elvarg**.net/download/
 runelite.website=https://**elvarg**.net/  
 runelite.bootstrap=https://elvarg.s3.eu-west-2.amazonaws.com/bootstrap.json  
 runelite.bootstrapsig=https://elvarg.s3.eu-west-2.amazonaws.com/bootstrap.json.sha256  
-runelite.name=**X**  
+runelite.name=**Cyphorax**  
 runelite.main=net.runelite.client.RuneLite
 ```
 
