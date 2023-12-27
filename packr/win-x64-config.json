@@ -1,9 +1,9 @@
 {
   "platform": "windows64",
   "jdk": "win64-jdk",
-  "executable": "OSAlive",
+  "executable": "X",
   "classpath": [
-    "target/OSAlive.jar"
+    "target/X.jar"
   ],
   "mainclass": "net.runelite.launcher.Launcher",
   "vmargs": [
