@@ -30,8 +30,8 @@
 	<groupId>net.runelite</groupId>
 	<artifactId>launcher</artifactId>
 	<version>1.0</version>
-	<name>OSAlive Launcher</name>
-	<description>Launcher for OSAlive client</description>
+	<name>X Launcher</name>
+	<description>Launcher for X client</description>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -152,7 +152,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>OSAlive</finalName>
+		<finalName>X</finalName>
 
 		<resources>
 			<resource>
